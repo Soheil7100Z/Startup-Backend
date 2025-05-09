@@ -1,0 +1,45 @@
+[
+    {
+         "id" : "1",
+         "title" : "Labtop",
+         "description" : "Dies ist ein Beispieltext, der als Platzhalter dient. Er wird häufig verwendet, um Layouts und Designs zu testen, bevor der endgültige Inhalt erstellt wird. Ziel ist es, eine visuelle Darstellung des Endprodukts zu ermöglichen, ohne vom Inhalt abzulenken. Solche Blindtexte helfen dabei, Struktur und Gestaltung einer Website oder eines Dokuments besser beurteilen zu können.",
+         "price" : "1250€",
+         "img" : "https://images.unsplash.com/photo-1511385348-a52b4a160dc2?q=80&w=2107&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+        "id" : "2",
+        "title" : "Monitor",
+        "description" : "Dies ist ein Beispieltext, der als Platzhalter dient. Er wird häufig verwendet, um Layouts und Designs zu testen, bevor der endgültige Inhalt erstellt wird. Ziel ist es, eine visuelle Darstellung des Endprodukts zu ermöglichen, ohne vom Inhalt abzulenken. Solche Blindtexte helfen dabei, Struktur und Gestaltung einer Website oder eines Dokuments besser beurteilen zu können.",
+        "price" : "380€",
+        "img" : "https://plus.unsplash.com/premium_photo-1681470644798-dd63dc4a0851?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+   },
+   {
+        "id" : "3",
+        "title" : "Tablet",
+        "description" : "Dies ist ein Beispieltext, der als Platzhalter dient. Er wird häufig verwendet, um Layouts und Designs zu testen, bevor der endgültige Inhalt erstellt wird. Ziel ist es, eine visuelle Darstellung des Endprodukts zu ermöglichen, ohne vom Inhalt abzulenken. Solche Blindtexte helfen dabei, Struktur und Gestaltung einer Website oder eines Dokuments besser beurteilen zu können.",
+        "price" : "640€",
+        "img" : "https://images.unsplash.com/photo-1633114073758-c4be9aeb15ac?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+        "id" : "4",
+        "title" : "Headset",
+        "description" : "Dies ist ein Beispieltext, der als Platzhalter dient. Er wird häufig verwendet, um Layouts und Designs zu testen, bevor der endgültige Inhalt erstellt wird. Ziel ist es, eine visuelle Darstellung des Endprodukts zu ermöglichen, ohne vom Inhalt abzulenken. Solche Blindtexte helfen dabei, Struktur und Gestaltung einer Website oder eines Dokuments besser beurteilen zu können.",
+        "price" : "80€",
+        "img" : "https://images.unsplash.com/photo-1552406923-bdd5268d3956?q=80&w=1965&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+   },
+   {
+        "id" : "5",
+        "title" : "Tastatur",
+        "description" : "Dies ist ein Beispieltext, der als Platzhalter dient. Er wird häufig verwendet, um Layouts und Designs zu testen, bevor der endgültige Inhalt erstellt wird. Ziel ist es, eine visuelle Darstellung des Endprodukts zu ermöglichen, ohne vom Inhalt abzulenken. Solche Blindtexte helfen dabei, Struktur und Gestaltung einer Website oder eines Dokuments besser beurteilen zu können.",
+        "price" : "60€",
+        "img" : "https://images.unsplash.com/photo-1571855593596-09d3e88a7707?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+        "id" : "6",
+        "title" : "Maus",
+        "description" : "Dies ist ein Beispieltext, der als Platzhalter dient. Er wird häufig verwendet, um Layouts und Designs zu testen, bevor der endgültige Inhalt erstellt wird. Ziel ist es, eine visuelle Darstellung des Endprodukts zu ermöglichen, ohne vom Inhalt abzulenken. Solche Blindtexte helfen dabei, Struktur und Gestaltung einer Website oder eines Dokuments besser beurteilen zu können.",
+        "price" : "35€",
+        "img" : "https://images.unsplash.com/photo-1686554825554-24adfcf5406a?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+   }
+]
+
