@@ -34,7 +34,7 @@ App.get('/products/:id', (req, res) => {
 
 App.post('/send' ,(req,res) =>{
    const output = `
-   <p style="font-size: 1.2rem; font-weight: bold; color: black" >Besucher*in hat Ihr Kontaktformular ausgefüllt:</p>
+   <p style="font-size: 1.1rem; font-weight: bold; color: black" >Besucher*in hat Ihr Kontaktformular ausgefüllt:</p>
    <ul>
         <li>Name: ${req.body.anrede} ${req.body.vorname} ${req.body.nachname}</li>
         <li>Email: ${req.body.email}</li>
@@ -44,33 +44,49 @@ App.post('/send' ,(req,res) =>{
    </ul>
    `;
 
+   const outputKunde = `
+   <p style="font-size: 1rem; color: black" >
+   Sehr geehrte/r ${req.body.anrede} ${req.body.vorname} ${req.body.nachname} <br/>
+   Vielen Dank! Ihre Anfrage wurde erfolgreich übermittelt. Unser Team wird sich zeitnah bei Ihnen melden.<br/>
+   Mit Freundlichen GrüPßen
+   </p>
+   `;
+
    const emailTransporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
     port: 465,
     secure: true,
     auth: {
-      user: "000000@gmail.com", // give your gmail
-      pass: "*********", //  give app password of your gmail
+      user: "soheilpro13max@gmail.com",
+      pass: "swfg ykyc zcmw zjxj",
     },
   });
 
 
   async function FromTo() {
-
     const emailInfo = await emailTransporter.sendMail({
-      from: '"your name" <000000@gmail.com>', //give your gmail
-      to: "111111@gmail.com", //give your gmail you want to send to
+      from: '"Soheil Zaremehrjardi" <soheilpro13max@gmail.com>',
+      to: "soheil7100@gmail.com",
       subject: "Kontaktformular - StartUp Project",
       text: "",
       html: output,
     });
 
-    console.log("Message sent: %s", emailInfo.messageId);
+    const emailMe = await emailTransporter.sendMail({
+      from: '"StartUp - Soheil Zaremehrjardi" <soheilpro13max@gmail.com>',
+      to: `${req.body.email}`,
+      subject: "Kontaktformular",
+      text: "ٍE-mail Bestätigung",
+      html: outputKunde,
+    });
 
     res.status(200).json({ success: true, message: 'received' })
   }
 
   FromTo().catch(console.error);
+
 })
+
+
 
 App.listen(PORT ,() => console.log('server is working') )
