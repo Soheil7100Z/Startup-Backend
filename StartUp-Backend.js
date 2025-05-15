@@ -4,6 +4,7 @@ const nodemailer = require('nodemailer')
 const cors = require('cors');
 const PORT = 3000
 const products = require('./products.json');
+const comments = require('./comment.json')
 
 const App = express()
 
@@ -16,6 +17,10 @@ App.use(cors({
     credentials: true
   }));
 App.use(express.json())
+
+App.get('/comments', (req,res) =>{
+  res.json(comments)
+})
 
 App.get('/products', (req, res) => {
   res.json(products);
