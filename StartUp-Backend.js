@@ -22,6 +22,13 @@ App.get('/comments', (req,res) =>{
   res.json(comments)
 })
 
+App.post('/comments-add', (req,res) =>{
+  const newComment = req.body
+  comments.push(newComment)
+})
+
+
+
 App.get('/products', (req, res) => {
   res.json(products);
 });
