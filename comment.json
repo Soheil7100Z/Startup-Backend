@@ -1,26 +1,8 @@
 [
     {
          "id" : "1",
-         "name": "Soheil 1",
-         "title" : "Diese Kommantar ist erste als Beispiel"
-    },
-    {
-         "id" : "2",
-         "name": "Soheil 2",
-         "title" : "Diese Kommantar ist erste als Beispiel"
-
-    },
-    {
-         "id" : "3",
-         "name": "Soheil 3",
-         "title" : "Diese Kommantar ist erste als Beispiel"
-
-    },
-    {
-         "id" : "4",
-         "name": "Soheil 4",
-         "title" : "Diese Kommantar ist erste als Beispiel"
-
+         "name": "Soheil",
+         "title" : "Diese Kommentar ist als Beispiel"
     }
 
 ]

@@ -4,30 +4,39 @@ const nodemailer = require('nodemailer')
 const cors = require('cors');
 const PORT = 3000
 const products = require('./products.json');
-const comments = require('./comment.json')
+let comments = require('./comment.json')
+
 
 const App = express()
 
 App.engine('handlebars' , engine())
 App.set('view engine' , 'handlebars')
-
+App.use(express.json())
 App.use(cors({
     origin: 'http://localhost:5000',
     methods: ['GET', 'POST'],
     credentials: true
   }));
-App.use(express.json())
 
-App.get('/comments', (req,res) =>{
-  res.json(comments)
-})
-
+// Post requests
 App.post('/comments-add', (req,res) =>{
   const newComment = req.body
   comments.push(newComment)
 })
 
+App.post('/comments-delete', (req,res) => {
+  const ID = req.body.id
+  if (comments.length > 1) {
+    comments = comments.filter(com => com.id!==ID)
+  }
+  console.log('is working:', ID ,comments.length)
+})
 
+
+// get requests
+App.get('/comments', (req,res) =>{
+  res.json(comments)
+})
 
 App.get('/products', (req, res) => {
   res.json(products);
@@ -43,7 +52,7 @@ App.get('/products/:id', (req, res) => {
     res.status(404).send('Not Found');
   }
 });
-
+// Post request and nodemailer
 App.post('/send' ,(req,res) =>{
    const output = `
    <p style="font-size: 1.1rem; font-weight: bold; color: black" >Besucher*in hat Ihr Kontaktformular ausgefüllt:</p>
