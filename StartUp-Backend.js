@@ -8,15 +8,18 @@ let comments = require('./comment.json');
 const path = require('path');
 
 
-const App = express()
 
-App.engine('handlebars' , engine())
-App.set('view engine' , 'handlebars')
-App.use(express.json())
-App.use('/images', express.static(path.join(__dirname, 'images')));
 
-App.use(cors({
-    origin: 'http://localhost:5000',
+app.engine('handlebars' , engine())
+app.set('view engine' , 'handlebars')
+app.use(express.json())
+app.use('/images', express.static(path.join(__dirname, 'images')));
+
+app.use(cors({
+    origin: [
+      'http://localhost:5000',
+      'https://frontend-startup-henna.vercel.app'
+    ],
     methods: ['GET', 'POST'],
     credentials: true
   }));
