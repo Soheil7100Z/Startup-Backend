@@ -4,7 +4,8 @@ const nodemailer = require('nodemailer')
 const cors = require('cors');
 const PORT = 3000
 const products = require('./products.json');
-let comments = require('./comment.json')
+let comments = require('./comment.json');
+const path = require('path');
 
 
 const App = express()
@@ -12,6 +13,8 @@ const App = express()
 App.engine('handlebars' , engine())
 App.set('view engine' , 'handlebars')
 App.use(express.json())
+App.use('/images', express.static(path.join(__dirname, 'images')));
+
 App.use(cors({
     origin: 'http://localhost:5000',
     methods: ['GET', 'POST'],
