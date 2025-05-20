@@ -84,15 +84,15 @@ App.post('/send' ,(req,res) =>{
     port: 465,
     secure: true,
     auth: {
-      user: "soheilpro13max@gmail.com",
-      pass: "swfg ykyc zcmw zjxj",
+      user: process.env.EMAIL,
+      pass: process.env.PASS
     },
   });
 
 
   async function FromTo() {
     const emailInfo = await emailTransporter.sendMail({
-      from: '"Soheil Zaremehrjardi" <soheilpro13max@gmail.com>',
+      from: `"Soheil Zaremehrjardi" <${process.env.EMAIL}>`,
       to: "soheil7100@gmail.com",
       subject: "Kontaktformular - StartUp Project",
       text: "",
@@ -100,7 +100,7 @@ App.post('/send' ,(req,res) =>{
     });
 
     const emailMe = await emailTransporter.sendMail({
-      from: '"StartUp - Soheil Zaremehrjardi" <soheilpro13max@gmail.com>',
+      from: `"StartUp - Soheil Zaremehrjardi" <${process.env.EMAIL}>`,
       to: `${req.body.email}`,
       subject: "Kontaktformular",
       text: "ٍE-mail Bestätigung",
@@ -111,6 +111,7 @@ App.post('/send' ,(req,res) =>{
   }
 
   FromTo().catch(console.error);
+
 
 })
 
