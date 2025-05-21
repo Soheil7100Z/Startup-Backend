@@ -61,7 +61,7 @@ App.get('/products/:id', (req, res) => {
 // Post request and nodemailer
 App.post('/send' ,(req,res) =>{
    const output = `
-   <p style="font-size: 1.1rem; font-weight: bold; color: black" >Besucher*in hat Ihr Kontaktformular ausgefüllt:</p>
+   <p style="font-size: 1rem; font-weight: bold; color: black" >Besucher*in hat Ihr Kontaktformular ausgefüllt:</p>
    <ul>
         <li>Name: ${req.body.anrede} ${req.body.vorname} ${req.body.nachname}</li>
         <li>Email: ${req.body.email}</li>
@@ -112,9 +112,6 @@ App.post('/send' ,(req,res) =>{
 
   FromTo().catch(console.error);
 
-
 })
 
-
-
-App.listen(PORT ,() => console.log('server is working') )
+app.listen(PORT ,() => console.log(`server is working ${PORT}`) )
