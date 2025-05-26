@@ -34,6 +34,7 @@ app.post('/comments-delete', (req,res) => {
     comments = comments.filter(com => com.id!==ID)
   }
   console.log('is working:', ID ,comments.length)
+  res.status(200).send({ success: true })
 })
 
 
