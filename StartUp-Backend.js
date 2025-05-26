@@ -1,19 +1,17 @@
+require('dotenv').config();
 const express = require('express')
+const app = express()
 const {engine} = require('express-handlebars')
 const nodemailer = require('nodemailer')
 const cors = require('cors');
-const PORT = 3000
+const PORT = process.env.PORT || 3000;
 const products = require('./products.json');
 let comments = require('./comment.json');
-const path = require('path');
-
-
 
 
 app.engine('handlebars' , engine())
 app.set('view engine' , 'handlebars')
 app.use(express.json())
-app.use('/images', express.static(path.join(__dirname, 'images')));
 
 app.use(cors({
     origin: [
@@ -25,12 +23,12 @@ app.use(cors({
   }));
 
 // Post requests
-App.post('/comments-add', (req,res) =>{
+app.post('/comments-add', (req,res) =>{
   const newComment = req.body
   comments.push(newComment)
 })
 
-App.post('/comments-delete', (req,res) => {
+app.post('/comments-delete', (req,res) => {
   const ID = req.body.id
   if (comments.length > 1) {
     comments = comments.filter(com => com.id!==ID)
@@ -39,16 +37,19 @@ App.post('/comments-delete', (req,res) => {
 })
 
 
-// get requests
-App.get('/comments', (req,res) =>{
+app.get('/', (req, res) => {
+  res.send('Backend is working');
+});
+
+app.get('/comments', (req,res) =>{
   res.json(comments)
 })
 
-App.get('/products', (req, res) => {
+app.get('/products', (req, res) => {
   res.json(products);
 });
 
-App.get('/products/:id', (req, res) => {
+app.get('/products/:id', (req, res) => {
   const { id } = req.params;
   const product = products.find(p => p.id == id);
 
@@ -59,7 +60,7 @@ App.get('/products/:id', (req, res) => {
   }
 });
 // Post request and nodemailer
-App.post('/send' ,(req,res) =>{
+app.post('/send' ,(req,res) =>{
    const output = `
    <p style="font-size: 1rem; font-weight: bold; color: black" >Besucher*in hat Ihr Kontaktformular ausgefüllt:</p>
    <ul>
@@ -88,7 +89,6 @@ App.post('/send' ,(req,res) =>{
       pass: process.env.PASS
     },
   });
-
 
   async function FromTo() {
     const emailInfo = await emailTransporter.sendMail({
