@@ -2,18 +2,14 @@
 
 A Express.js backend for serving product data, handling user comments, and managing contact form email submissions for a startup website.
 
-## 🌐 Live URL
-
-- [Backend on Render](https://backend-startup-432h.onrender.com)
-
 ## 🔍 Features
 
 - **Endpoints**:
-  - `GET /api/products`: Fetch all products
-  - `GET /api/comments`: Fetch all comments
-  - `POST /api/comments-add`: Add a comment
-  - `POST /api/comments-delete`: delete a comment
-  - `POST /api/send`: Send email to both user and admin
+  - `GET /products`: Fetch all products
+  - `GET /comments`: Fetch all comments
+  - `POST /comments-add`: Add a comment
+  - `POST /comments-delete`: delete a comment
+  - `POST /send`: Send email to both user and admin
 - **Email Integration**:
   - Sends confirmation email using `nodemailer`
   - Email sent to both user and admin
